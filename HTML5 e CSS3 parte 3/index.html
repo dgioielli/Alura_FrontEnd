@@ -1,0 +1,63 @@
+<!--Marcação do tipo do arquivo.-->
+<!DOCTYPE html>
+<!--Marcação do início do html.
+        - Indicação da linguagem que está sendo utilizada na página.-->
+<html>
+<!--Marcação do head do arquivo. Aqui fazemos as marcações de informações utilizadas pelo navegador na leitura e renderização do arquivo.-->
+
+<head>
+    <!--Marcação de metadados para a página.
+                - Marcação do tipo de caracteres que está sendo utilizada na página.-->
+    <meta charset="UTF-8">
+    <!--Marcação do título que deve aparecer no navegador quando acessando essa página.-->
+    <title>Barbearia Alura</title>
+    <!--Marcação de ligação entre arquivos para a utilização de recursos externos.
+                - Indicação do tipo de relação entre os arquivos.
+                - Indicação do caminho do arquivo que deve ser utilizado.-->
+    <link rel="stylesheet" href="style-home.css">
+    <!--Uma alternativa para o css é a criação do estilo da página aqui no head com a utilização da tag <style>-->
+</head>
+<!--Marcação do conteúdo que deve ser apresentado no corpo da página.-->
+
+<body>
+    <!--Marcação do cabeçalho da página.-->
+    <header>
+        <!--Marcação de título, ajuda na estruturação do arquivo, os títulos do arquivo podem ser indicados por níveis: h1, h2, h3...
+                    - Indicação da class que será utilizada na definição dos estílos no css.-->
+        <h1 class="titulo-principal">Barbearia Alura</h1>
+    </header>
+    <!--Marcação de inclusão de imagem.
+                - Indicação do caminho do arquivo de imagem.-->
+    <img src="banner.jpg" id="banner">
+    <!--Marcação de uma divisão de conteúdo da página.-->
+    <div class="principal">
+        <h2 class="titulo-centralizado">Sobre a Barbearia Alura</h2>
+        <!--Marcação de paragrafo para ajudar na organização de textos.-->
+        <p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor
+            para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos
+            clientes a cada dia.
+        </p>
+        <!--A tag <strong> é utilizada para ressaltar uma parte do texto, usando negrito.-->
+        <!--A indicação do atributo id é utilizado para a aplicação do estilo em um determinado identificador, esse identificador deve ser único na página.-->
+        <p id="missao"><em>Nossa missão é: <strong>"Proporcionar auto-estima e qualidade de vida aos
+                    clientes"</strong>.</em>
+        </p>
+        <!--A tag <em> é utilizada para dar enfase a uma parte do texto, usando itálico.-->
+        <p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de
+            excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
+    </div>
+    <div class="beneficios">
+        <h3 class="titulo-centralizado">Benefícios</h3>
+        <!--Marcação de uma lista não numerada. para uma lista numerada deve ser utilizada a tag <ol>-->
+        <ul>
+            <!--Marcação dos itens de uma lista.-->
+            <li class="itens">Atendimento aos Clientes</li>
+            <li class="itens">Espaço diferenciado</li>
+            <li class="itens">Localização</li>
+            <li class="itens">Profissionais Qualificados</li>
+        </ul>
+        <img src="beneficios.jpg" class="imagem-beneficios">
+    </div>
+</body>
+
+</html>

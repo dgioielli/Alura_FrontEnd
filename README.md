@@ -4,4 +4,5 @@ Esse projeto é um estudo de caso para uma compreenção sólida de alguns dos c
 
 1. HTML5 e CSS3 parte 1: A primeira página Web.
 1. HTML5 e CSS3 parte 2: Posicionamento, listas e navegação
+1. HTML5 e CSS3 parte 3: Trabalhando com formulários e tabelas
  
