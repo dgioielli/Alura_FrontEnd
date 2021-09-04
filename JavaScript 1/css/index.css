@@ -141,6 +141,14 @@ button[disabled=disabled], button:disabled {
 	color: lightcoral;
 }
 
+#filtro-nome {
+	margin-bottom: 1em;
+}
+
+.invisivel{
+	display: none;
+}
+
 .fadeOut{
 	opacity: 0;
 	font-size: 1px;

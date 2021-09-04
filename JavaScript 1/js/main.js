@@ -46,21 +46,23 @@ titulo.textContent = "Aparecida Nutricionista!";
 const pacientes = document.querySelectorAll(".paciente");
 
 for (let i = 0; i < pacientes.length; i++) {
-    const paciente = pacientes[i];
+    // const paciente = pacientes[i];
 
-    const tdPeso = paciente.querySelector(".info-peso");
-    const peso = tdPeso.textContent;
+    // const tdPeso = paciente.querySelector(".info-peso");
+    // const peso = tdPeso.textContent;
 
-    const tdAltura = paciente.querySelector(".info-altura");
-    const altura = tdAltura.textContent;
+    // const tdAltura = paciente.querySelector(".info-altura");
+    // const altura = tdAltura.textContent;
+    const pacienteTr = pacientes[i]
+    const paciente = getPaciente(pacienteTr);
 
     // const imc = peso / (altura * altura);
 
-    const tdIMC = paciente.querySelector(".info-imc");
+    const tdIMC = pacienteTr.querySelector(".info-imc");
     tdIMC.textContent = "";
 
-    const isPesoValido = validaPeso(peso);
-    const isAlturaValida = validaAltura(altura);
+    const isPesoValido = validaPeso(paciente.peso);
+    const isAlturaValida = validaAltura(paciente.altura);
 
 
     //if (peso <= 0 || peso >= 500) {
@@ -68,19 +70,19 @@ for (let i = 0; i < pacientes.length; i++) {
         //isPesoValido = false;
         tdIMC.textContent += " Peso inválido! ";
         // Poderia ser feito alterando diretamente na propriedade style, mas é uma boa prática utilizar o próprio css para isso.
-        paciente.classList.add("paciente-invalido");
+        pacienteTr.classList.add("paciente-invalido");
     }
 
     //if (altura <= 0 || altura >= 2.5) {
     if (!isAlturaValida) {
         //isAlturaValida = false;
         tdIMC.textContent += " Altura inválida! ";
-        paciente.classList.add("paciente-invalido");
+        pacienteTr.classList.add("paciente-invalido");
     }
 
     if (isPesoValido && isAlturaValida) {
         // tdIMC.textContent = imc.toFixed(2);
-        tdIMC.textContent = calculaIMC(peso, altura);
+        tdIMC.textContent = calculaIMC(paciente.peso, paciente.altura);
     }
 
     // console.log(paciente);
@@ -109,6 +111,22 @@ function validaPaciente(paciente) {
     // if (paciente.altura.length < 1) erros.push("a altura não pode ser em branco!");
     if (paciente.gordura.length < 1) erros.push("a gordura não pode ser em branco!");
     return erros;
+}
+
+function getPaciente(pacienteTr) {
+    const tdNome = pacienteTr.querySelector(".info-nome");
+    const tdPeso = pacienteTr.querySelector(".info-peso");
+    const tdAltura = pacienteTr.querySelector(".info-altura");
+    const tdGordura = pacienteTr.querySelector(".info-gordura");
+    const tdImc = pacienteTr.querySelector(".info-imc");
+    const paciente = {
+        nome: tdNome.textContent,
+        peso: tdPeso.textContent,
+        altura: tdAltura.textContent,
+        gordura: tdGordura.textContent,
+        imc: tdImc.textContent,
+    };
+    return paciente
 }
 
 function validaPeso(peso) {

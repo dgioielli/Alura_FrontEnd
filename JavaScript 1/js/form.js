@@ -45,10 +45,11 @@ btnAdicionar.addEventListener("click", function (event) {
         return;
     }
 
-    const pacienteTr = montaTr(paciente)
+    // const pacienteTr = montaTr(paciente)
 
-    const table = document.querySelector("#tabela-pacientes");
-    table.appendChild(pacienteTr);
+    // const table = document.querySelector("#tabela-pacientes");
+    // table.appendChild(pacienteTr);
+    addPacienteTable(paciente);
 
     form.reset();
 
@@ -63,6 +64,13 @@ function obtemPacienteForm(form) {
         imc: calculaIMC(form.peso.value, form.altura.value),
     }
     return paciente;
+}
+
+function addPacienteTable(paciente) {
+    const pacienteTr = montaTr(paciente)
+
+    const table = document.querySelector("#tabela-pacientes");
+    table.appendChild(pacienteTr);
 }
 
 function montaTr(paciente) {
